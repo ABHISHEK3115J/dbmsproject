@@ -1,0 +1,68 @@
+<div class="container" style="margin-top: 50px;">
+
+    <div class="card"> 
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Student Details</a>
+                </li>
+                <% if(data!=''&&typeof data[0].Room_ID!= 'undefined' && data[0].Room_ID!=null){ %> 
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/studfeedback/<%= data[0].Hostel_ID %> ">Add Feedback</a>
+                </li>
+                <% } %> 
+            </ul>
+        </div>
+    <div class="card-body">
+        
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#Student_ID</th>
+                    <th scope="col">Student_Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Backlog</th>
+                    <th scope="col">CGPA</th>
+                    <th scope="col">Study_Year</th>
+                    <th scope="col">Mobile_No</th>
+                    <th scope="col">Admin_ID</th>
+                    <th scope="col">Hostel_ID</th>
+                    <th scope="col">Room_ID</th>
+                    <% if(typeof data[0].Room_ID!= 'undefined' && data[0].Room_ID!=null) { %> 
+                    <th scope="col">Location</th>
+                    <%}%>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+           
+                <tr>
+                    <td><%= data[0].Student_ID %></td>
+                    <td><%= data[0].Student_Name%></td>
+                    <td><%= data[0].Department%></td>
+                    <td><%=data[0].Gender%></td>
+                    <td><%= data[0].Backlog %></td>
+                    <td><%= data[0].CGPA%></td>
+                    <td><%= data[0].Study_Year%></td>
+                    <td><%=data[0].Mobile_No%></td>
+                    <td><%= data[0].ID %></td>
+                    <td><%= data[0].Hostel_ID%></td>
+                    <td><%= data[0].Room_ID%></td>
+                    <% if(typeof data[0].Room_ID!= 'undefined' && data[0].Room_ID!=null){  %> 
+                    <td><a href="/location/map/<%= data[0].Hostel_ID %> ">Get Directions</a></td>
+                    <%}%>
+                </tr>
+            </tbody>
+        </table>
+        <% } %>
+        
+        <!-- if result is empty -->
+        <% if(!data.length) { %>
+            <p class="text-center">Not yet Registered!<a href="/registration">wanna register?</a></p>
+        <% } %>
+
+        </div>
+    </div>
+</div>

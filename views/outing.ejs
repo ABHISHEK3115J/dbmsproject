@@ -1,0 +1,54 @@
+<div class="container" style="margin-top: 50px;">
+
+    <div class="card"> 
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Outing Details</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/outing/add/1">Add Outing</a>
+                </li>
+            </ul>
+        </div>
+    <div class="card-body">
+        
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">In_Time</th>
+                    <th scope="col">Out_Time</th>
+                    <th scope="col">Out_Date</th>
+                    <th scope="col">In_Date</th>
+                    <th scope="col">Student_ID</th>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+                <tr>
+                   
+                    <td><%= data[i].In_Time%></td>
+                    <td><%=data[i].Out_Time%></td>
+                    <td><%= data[i].Out_Date%></td>
+                    <td><%= data[i].In_Date%></td>
+                    <td><%=data[i].Student_ID%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="/outing/edit/<%= data[i].Student_ID %> ">Edit</a>                       
+                        <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="/outing/delete/<%= data[i].Student_ID %> ">Delete</a>                       
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% } %>
+        
+        <!-- if result is empty -->
+        <% if(!data.length) { %>
+            <p class="text-center">No Outing Details found!</p>
+        <% } %>
+
+        </div>
+    </div>
+</div>

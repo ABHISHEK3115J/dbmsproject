@@ -1,0 +1,18 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="card"> 
+    	<div class="card-header">
+			Add Feedback
+		</div>
+        <div class="card-body">
+            <form action="/studfeedback/<%= data %> " method="post">
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" name="Text" rows="5" id="comment"></textarea>
+                  </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Add"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container" style="margin-top: 50px;">
+
+    <div class="card"> 
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Hostel Details</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/hostel/add/1">Add Hostel</a>
+                </li>
+            </ul>
+        </div>
+    <div class="card-body">
+        
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#Hostel_ID</th>
+                    <th scope="col">Hostel Name</th>
+                    <th scope="col">Hostel Type</th>
+                    <th scope="col">Admin_ID</th>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+                <tr>
+                    <td><%= data[i].Hostel_ID %></td>
+                    <td><%= data[i].Hostel_Name%></td>
+                    <td><%= data[i].Hostel_Type%></td>
+                    <td><%=data[i].ID%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="/hostel/edit/<%=data[i].Hostel_ID%>">Edit</a>                       
+                        <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="/hostel/delete/<%=data[i].Hostel_ID%>">Delete</a>                       
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% } %>
+        
+        <!-- if result is empty -->
+        <% if(!data.length) { %>
+            <p class="text-center">No Hostel found!</p>
+        <% } %>
+
+        </div>
+    </div>
+</div>

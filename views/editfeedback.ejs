@@ -1,0 +1,20 @@
+<h1 class=" d-flex justify-content-center">
+	Editing The Feedback =>.
+</h1>
+<div class=row>
+	<%- include("./partials/messages.ejs") %> 
+	<form action="/feedback/update/<%=data._id%>" class="mx-auto" method="POST">
+		<div class="form-group">
+			<input class="form-control " type="text" name="rvce_ID" placeholder="editvalue" value="<%=data.rvce_ID%>"required readonly>
+        </div>
+        <div class="form-group">
+			<input class="form-control " type="text" name="Hostel_ID" placeholder="Feedback" value="<%=data.Hostel_ID%>"required readonly>
+        </div>
+        <div class="form-group">
+			<input class="form-control " type="text" name="Text" placeholder="Feedback" value="<%=data.Text%>"required>
+		</div>
+		<div class="form-group">
+			<input class="btn  form-control btn-primary" type="submit">
+		</div>
+	</form>
+</div>

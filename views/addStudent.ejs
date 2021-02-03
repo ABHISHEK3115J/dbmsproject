@@ -1,0 +1,95 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="card"> 
+    	<div class="card-header">
+			Add Student
+		</div>
+        <div class="card-body">
+            <%- include("./partials/messages.ejs") %> 
+            <form action="/student/add/<%=Hostel_ID%>/1 " method="post">
+                <div class="form-group">
+                    <label>Student_ID:</label>
+                    <input type="text" class="form-control" name="Student_ID" value="<%= Student_ID %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Student_Name:</label>
+                    <input type="text" class="form-control" name="Student_Name" value="<%= Student_Name %> " autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Department:</label>
+                        <div class="input-group mb-3">
+                            <select name="Department"  class="custom-select" id="inputGroupSelect02">
+                              <option value="<%= Department %> " selected>Choose...</option>
+                              <option value="CSE">CSE</option>
+                              <option value="ECE">ECE</option>
+                              <option value="EEE">EEE</option>
+                              <option value="ME">ME</option>
+                              <option value="CE">CE</option>
+                              <option value="BT">BT</option>
+                              <option value="EI">EI</option>
+                              <option value="AE">AE</option>
+                              <option value="CHE">CHE</option>
+                            </select>
+                          </div>
+                </div>
+                <div class="form-group">
+                    <label for="Gender">Gender</label>
+                    <div class="input-group mb-3">
+                        <select name="Gender" class="custom-select" id="inputGroupSelect02">
+                          <option value="<%= Gender %> " selected>Choose...</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Backlog:</label>
+                    <input type="text" class="form-control" name="Backlog" value="<%= Backlog %> "  autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>CGPA:</label>
+                    <input type="text" step="any" class="form-control" name="CGPA" value="<%= CGPA %> "  autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Study_Year:</label>
+                    <div class="input-group mb-3">
+                        <select name="Study_Year" class="custom-select" id="inputGroupSelect02">
+                          <option value="<%= Study_Year %>" selected>Choose...</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Mobile_No:</label>
+                    <input type="text" class="form-control" name="Mobile_No" value="<%= Mobile_No %> "   autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Admin_ID:</label>
+                    <input type="text" class="form-control" name="ID" value="<%= ID %>" autocomplete="off" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Hostel_ID:</label>
+                    <input type="text" class="form-control" name="Hostel_ID" value="<%= Hostel_ID %>" autocomplete="off" readonly>
+                </div>
+               <div class="form-group">
+                    <label>Room_ID:</label>
+                        <div class="input-group mb-3">
+                            <select name="Room_ID"  class="custom-select" id="inputGroupSelect02">
+                                <%
+                                for ( var i = 0; i < Room_ID.length; i++ )
+                               {
+                                 %><option value="<%=Room_ID[ i ].Room_ID %>"><%=Room_ID[ i ].Room_ID %></option><%
+                               }
+                             %>
+                            </select>
+                          </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Add"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

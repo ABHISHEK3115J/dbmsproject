@@ -1,0 +1,47 @@
+<div class="container" style="margin-top: 50px;">
+
+    <div class="card"> 
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Room Details</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/room/add/<%= data1 %> /1">Add Room</a>
+                </li>
+            </ul>
+        </div>
+    <div class="card-body">
+        
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#Hostel_ID</th>
+                    <th scope="col">Room ID</th>
+                    <th width="200px"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+                <tr>
+                    <td><%= data[i].Hostel_ID %></td>
+                    <td><%= data[i].Room_ID%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="/room/edit/<%=data[i].Hostel_ID%>/<%=data[i].Room_ID %> ">Edit</a>                       
+                        <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="/room/delete/<%=data[i].Hostel_ID%>/<%=data[i].Room_ID  %> ">Delete</a>                       
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% } %>
+        
+        <!-- if result is empty -->
+        <% if(!data.length) { %>
+            <p class="text-center">No Rooms found!</p>
+        <% } %>
+
+        </div>
+    </div>
+</div>

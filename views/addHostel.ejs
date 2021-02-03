@@ -1,0 +1,37 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="card"> 
+    	<div class="card-header">
+			Add Hostel
+		</div>
+        <div class="card-body">
+            <%- include("./partials/messages.ejs") %> 
+            <form action="/hostel/add/1" method="post">
+                <div class="form-group">
+                    <label>Hostel_ID:</label>
+                    <input type="text" class="form-control" name="Hostel_ID" value="<%= Hostel_ID %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Hostel_Name:</label>
+                    <input type="text" class="form-control" name="Hostel_Name" value="<%= Hostel_Name %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="Gender">Gender</label>
+                    <div class="input-group mb-3">
+                        <select name="Hostel_Type" class="custom-select" id="inputGroupSelect02">
+                          <option selected>Choose...</option>
+                          <option value="Boys">Boys</option>
+                          <option value="Girls">Girls</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label>Admin_ID:</label>
+                    <input type="text" class="form-control" name="ID" value="<%= ID %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Add"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

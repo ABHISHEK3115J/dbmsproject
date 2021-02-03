@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+    </head>
+    <body>
+        <div style="width: 85%; margin: 0 7.5%;">
+            <div style="text-align: center; padding-left: 50px;">            
+                <h3>Student Report</h5>
+                <table>
+                    <% for(var i = 0; i< data.length; i++) { %>
+                        <tr>
+                            <td><%= data[i].Student_ID %></td>
+                            <td><%= data[i].Student_Name%></td>
+                            <td><%= data[i].Department%></td>
+                            <td><%=data[i].Gender%></td>
+                            <td><%= data[i].Backlog %></td>
+                            <td><%= data[i].CGPA%></td>
+                            <td><%= data[i].Study_Year%></td>
+                            <td><%=data[i].Mobile_No%></td>
+                            <td><%= data[i].ID %></td>
+                            <td><%= data[i].Hostel_ID%></td>
+                            <td><%= data[i].Room_ID%></td>
+                        </tr>
+                    <% } %>
+                </table>
+             </div>
+        </div>
+    </body>
+</html>

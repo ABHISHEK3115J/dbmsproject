@@ -1,0 +1,39 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="card"> 
+    	<div class="card-header">
+			Edit Visitor
+		</div>
+        <div class="card-body">
+            <%- include("./partials/messages.ejs") %> 
+            <form action="/visitor/update/<%= data1 %> /<%= Visitor_ID %>/<%= Student_ID %> " method="post">
+                <div class="form-group">
+                    <label>Visitor_ID:</label>
+                    <input type="text" class="form-control" name="Visitor_ID" value="<%= Visitor_ID %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Visitor_Name:</label>
+                    <input type="text" class="form-control" name="Visitor_Name" value="<%= Visitor_Name %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>In_Time:</label>
+                    <input type="text" class="form-control" name="In_Time" value="<%= In_Time %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Out_Time:</label>
+                    <input type="text" class="form-control" name="Out_Time" value="<%= Out_Time %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Date:</label>
+                    <input type="text" class="form-control" name="Date" value="<%= Date %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Student_ID:</label>
+                    <input type="text" class="form-control" name="Student_ID" value="<%= Student_ID %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Update"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
