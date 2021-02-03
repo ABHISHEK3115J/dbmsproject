@@ -145,7 +145,7 @@ router.get('/edit/(:_id)/(:Student_ID)',ensureAuthenticated, function(req, res, 
         else {
             // render to edit.ejs
             dbConn.query('SELECT R.Room_ID FROM Room as R LEFT OUTER JOIN Student as S ON R.Room_ID = S.Room_ID WHERE S.Room_ID IS NULL AND R.Hostel_ID = ? ',[req.params._id],(err,rows)=>{
-                console.log(rows);
+                console.log(rows,birows[0].Backlog);
                      res.render('editAllocate', {
                         Student_ID :id,
                         Student_Name :birows[0].Student_Name,
