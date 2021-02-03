@@ -25,7 +25,7 @@ router.get('/add/(:ide)/(:id)',ensureAuthenticated, function(req, res, next) {
         Visitor_Name: '',
         In_Time:'',
         Out_Time:'',
-        date:'',
+        Date:'',
         Student_ID:'',
         data1:req.params.ide
     })
@@ -36,7 +36,7 @@ router.post('/add/(:ide)/(:id)', function(req, res, next) {
     let Visitor_Name = req.body.Visitor_Name;
     let In_Time = req.body.In_Time;
     let Out_Time=req.body.Out_Time;
-    let date = req.body.date;
+    let Date = req.body.Date;
     let Student_ID = req.body.Student_ID;
     let errors = false;
 
@@ -50,7 +50,7 @@ router.post('/add/(:ide)/(:id)', function(req, res, next) {
             Visitor_Name: Visitor_Name,
             In_Time:In_Time,
             Out_Time:Out_Time,
-            date:date,
+            Date:Date,
             Student_ID:Student_ID
         })
     }
@@ -63,7 +63,7 @@ router.post('/add/(:ide)/(:id)', function(req, res, next) {
             Visitor_Name: Visitor_Name,
             In_Time:In_Time,
             Out_Time:Out_Time,
-            date:date,
+            Date:Date,
             Student_ID:Student_ID
         }
         
@@ -78,7 +78,7 @@ router.post('/add/(:ide)/(:id)', function(req, res, next) {
                     Visitor_Name: form_data.Visitor_Name,
                     In_Time:form_data.In_Time,
                     Out_Time:form_data.Out_Time,
-                    date:form_data.date,
+                    Date:form_data.Date,
                     Student_ID:form_data.Student_ID,
                     data1:req.params.ide
                 })
@@ -109,7 +109,7 @@ router.get('/edit/(:ide)/(:Visitor_ID)/(:Student_ID)',ensureAuthenticated, funct
                 Visitor_Name: rows[0].Visitor_Name,
                 In_Time:rows[0].In_Time,
                 Out_Time:rows[0].Out_Time,
-                date:rows[0].date,
+                Date:rows[0].Date,
                 Student_ID:rows[0].Student_ID,
                 data1:req.params.ide
             })
@@ -123,7 +123,7 @@ router.post('/update/(:ide)/(:Visitor_ID)/(:Student_ID)', function(req, res, nex
     let Visitor_Name = req.body.Visitor_Name;
     let In_Time = req.body.In_Time;
     let Out_Time=req.body.Out_Time;
-    let date = req.body.date;
+    let Date = req.body.Date;
     let Student_ID = req.body.Student_ID;
     let errors = false;
 
@@ -136,7 +136,7 @@ router.post('/update/(:ide)/(:Visitor_ID)/(:Student_ID)', function(req, res, nex
             Visitor_Name: Visitor_Name,
             In_Time:In_Time,
             Out_Time:Out_Time,
-            date:date,
+            Date:Date,
             Student_ID:Student_ID
         })
     }
@@ -149,7 +149,7 @@ router.post('/update/(:ide)/(:Visitor_ID)/(:Student_ID)', function(req, res, nex
             Visitor_Name: Visitor_Name,
             In_Time:In_Time,
             Out_Time:Out_Time,
-            date:date,
+            Date:Date,
             Student_ID:Student_ID
         }
         dbConn.query('UPDATE Visitor SET ? WHERE Visitor_ID = ? and Student_ID = ? ', [form_data,Visitor_ID,Student_ID], function(err, result) {
@@ -164,7 +164,7 @@ router.post('/update/(:ide)/(:Visitor_ID)/(:Student_ID)', function(req, res, nex
                     Visitor_Name: form_data.Visitor_Name,
                     In_Time:form_data.In_Time,
                     Out_Time:form_data.Out_Time,
-                    date:form_data.date,
+                    Date:form_data.Date,
                     Student_ID:form_data.Student_ID,
                     data1:req.params.ide
                 })
